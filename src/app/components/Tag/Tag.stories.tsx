@@ -6,4 +6,4 @@ export default {
   component: Tag,
 };
 
-export const TagOne = (): JSX.Element => <Tag tagList={['JS', 'JK']}/>;
+export const TagOne = (): JSX.Element => <Tag tagList={['JS', 'JK']} />;
