@@ -5,14 +5,21 @@ import Tag from '../Tag/Tag';
 type CardProps = {
   title: string;
   description: string;
+  tagList: string[];
+  detail: boolean;
 };
 
-function Card({ title, description }: CardProps): JSX.Element {
+function Card({
+  title,
+  description,
+  tagList,
+  detail = false,
+}: CardProps): JSX.Element {
   return (
     <CardContainer>
       <h2>{title}</h2>
       <p>{description}</p>
-      <Tag tagList={['JS', 'HTML']} />
+      {detail ? <Tag tagList={tagList} /> : ''}
     </CardContainer>
   );
 }

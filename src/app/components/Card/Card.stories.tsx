@@ -6,6 +6,20 @@ export default {
   component: Card,
 };
 
+export const CardDetail = (): JSX.Element => (
+  <Card
+    title={'Hier steht der Titel'}
+    description={'Hier wird beschrieben'}
+    tagList={['JS', 'HTML', 'CSS', 'TS']}
+    detail={true}
+  />
+);
+
 export const CardRegular = (): JSX.Element => (
-  <Card title={'Hier steht der Titel'} description={'Hier wird beschrieben'} />
+  <Card
+    title={'Regular'}
+    description={'Beschreibung'}
+    tagList={['JS', 'CSS', 'TS']}
+    detail={false}
+  />
 );
