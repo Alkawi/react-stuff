@@ -20,6 +20,5 @@ export const CardRegular = (): JSX.Element => (
     title={'Regular'}
     description={'Beschreibung'}
     tagList={['JS', 'CSS', 'TS']}
-    detail={false}
   />
 );

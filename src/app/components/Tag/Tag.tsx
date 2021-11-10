@@ -5,7 +5,7 @@ type TagProps = {
   tagList: string[];
 };
 
-function Tag({ tagList }: TagProps): JSX.Element {
+function Tags({ tagList }: TagProps): JSX.Element {
   return (
     <TagList>
       {tagList.map((tag) => (
@@ -15,7 +15,7 @@ function Tag({ tagList }: TagProps): JSX.Element {
   );
 }
 
-export default Tag;
+export default Tags;
 
 const TagItem = styled.li`
   background-color: green;

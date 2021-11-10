@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tag from '../Tag/Tag';
+import Tags from '../Tag/Tag';
 
 type CardProps = {
   title: string;
   description: string;
   tagList: string[];
-  detail: boolean;
+  detail?: boolean;
 };
 
 function Card({
@@ -19,7 +19,7 @@ function Card({
     <CardContainer>
       <h2>{title}</h2>
       <p>{description}</p>
-      {detail ? <Tag tagList={tagList} /> : ''}
+      {detail ? <Tags tagList={tagList} /> : ''}
     </CardContainer>
   );
 }

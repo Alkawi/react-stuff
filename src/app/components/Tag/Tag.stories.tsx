@@ -1,9 +1,9 @@
 import React from 'react';
-import Tag from './Tag';
+import Tags from './Tag';
 
 export default {
   title: 'Component/Tag',
-  component: Tag,
+  component: Tags,
 };
 
-export const TagOne = (): JSX.Element => <Tag tagList={['JS', 'JK']} />;
+export const TagOne = (): JSX.Element => <Tags tagList={['JS', 'JK']} />;
