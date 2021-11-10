@@ -16,17 +16,17 @@ function Card({
   detail = false,
 }: CardProps): JSX.Element {
   return (
-    <CardContainer>
+    <CardBody>
       <h2>{title}</h2>
       <p>{description}</p>
       {detail ? <Tags tagList={tagList} /> : ''}
-    </CardContainer>
+    </CardBody>
   );
 }
 
 export default Card;
 
-const CardContainer = styled.div`
+const CardBody = styled.div`
   background-color: red;
   color: white;
   display: grid;
