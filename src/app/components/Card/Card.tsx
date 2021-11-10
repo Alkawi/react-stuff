@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tags from '../Tag/Tag';
+import Tags from '../Tags/Tags';
 
 type CardProps = {
   title: string;
