@@ -28,6 +28,6 @@ const CardBody = styled.div`
   display: grid;
   padding: 15px;
   border-radius: 12px;
-  max-width: 500px;
   justify-items: center;
+  margin: 20px;
 `;
