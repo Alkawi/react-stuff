@@ -11,7 +11,6 @@ export const CardDetail = (): JSX.Element => (
     title={'Hier steht der Titel'}
     description={'Hier wird beschrieben'}
     tagList={['JS', 'HTML', 'CSS', 'TS']}
-    detail={true}
   />
 );
 

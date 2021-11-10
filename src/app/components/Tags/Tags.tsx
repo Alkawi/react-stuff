@@ -1,32 +1,21 @@
 import React from 'react';
+import type { ReactNode } from 'react';
 import styled from 'styled-components';
 
 type TagProps = {
-  tagList: string[];
+  children: ReactNode;
 };
 
-function Tags({ tagList }: TagProps): JSX.Element {
-  return (
-    <TagList>
-      {tagList.map((tag) => (
-        <TagItem>{tag}</TagItem>
-      ))}
-    </TagList>
-  );
+function Tags({ children }: TagProps): JSX.Element {
+  return <TagItem>{children}</TagItem>;
 }
 
 export default Tags;
 
-const TagItem = styled.li`
+const TagItem = styled.span`
   background-color: green;
   color: white;
   padding: 5px 10px;
   display: inline-block;
   border-radius: 8px;
-`;
-
-const TagList = styled.ul`
-  list-style: none;
-  display: flex;
-  gap: 4px;
 `;

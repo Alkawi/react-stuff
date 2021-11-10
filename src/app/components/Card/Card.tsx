@@ -5,21 +5,17 @@ import Tags from '../Tags/Tags';
 type CardProps = {
   title: string;
   description: string;
-  tagList: string[];
-  detail?: boolean;
+  tagList?: string[];
 };
 
-function Card({
-  title,
-  description,
-  tagList,
-  detail = false,
-}: CardProps): JSX.Element {
+function Card({ title, description, tagList }: CardProps): JSX.Element {
   return (
     <CardBody>
       <h2>{title}</h2>
       <p>{description}</p>
-      {detail ? <Tags tagList={tagList} /> : ''}
+      {tagList?.map((tag) => (
+        <Tags>{tag}</Tags>
+      ))}
     </CardBody>
   );
 }
