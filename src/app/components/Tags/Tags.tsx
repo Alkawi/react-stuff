@@ -16,6 +16,5 @@ const TagItem = styled.span`
   background-color: green;
   color: white;
   padding: 5px 10px;
-  display: inline-block;
   border-radius: 8px;
 `;
