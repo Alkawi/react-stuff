@@ -16,12 +16,12 @@ function DetailCard({
 }: CardProps): JSX.Element {
   return (
     <CardBody>
+      <Button>Back</Button>
       <h2>{title}</h2>
       <p>{description}</p>
       {categories.map((tag) => (
         <Tags key={tag}>{tag}</Tags>
       ))}
-      <Button>Back</Button>
     </CardBody>
   );
 }
