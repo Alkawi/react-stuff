@@ -17,6 +17,7 @@ function Stuff(): JSX.Element {
     }
     fetchThing();
   }, []);
+
   return (
     <div>
       {thing && (
