@@ -1,22 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DetailCard from '../../components/DetailCard/DetailCard';
+import useFetch from '../../hooks/useFetch';
 import type { Thing } from '../../types';
 
 function Stuff(): JSX.Element {
   const { thingId } = useParams();
-  const [thing, setThing] = useState<Thing | null>(null);
-
-  useEffect(() => {
-    async function fetchThing() {
-      const response = await fetch(
-        `https://json-server.neuefische.de/stuff/${thingId}`
-      );
-      const fetchedThing = await response.json();
-      setThing(fetchedThing);
-    }
-    fetchThing();
-  }, []);
+  const thing = useFetch(`https://json-server.neuefische.de/stuff/${thingId}`);
 
   return (
     <div>
