@@ -12,7 +12,7 @@ function App(): JSX.Element {
         <Route path="/contact" element={<h1>Contact</h1>} />
 
         <Route path="/stuff" element={<Stuff />}>
-          <Route path=":stuffs" element={<Stuff />} />
+          <Route path=":thingId" element={<Stuff />} />
         </Route>
       </Routes>
     </BrowserRouter>

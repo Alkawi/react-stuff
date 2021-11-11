@@ -4,13 +4,13 @@ import DetailCard from '../../components/DetailCard/DetailCard';
 import type { Thing } from '../../types';
 
 function Stuff(): JSX.Element {
-  const thingParams = useParams();
+  const { thingId } = useParams();
   const [thing, setThing] = useState<Thing | null>();
 
   useEffect(() => {
     async function fetchThing() {
       const response = await fetch(
-        `https://json-server.neuefische.de/stuff/${thingParams.stuffs}`
+        `https://json-server.neuefische.de/stuff/${thingId}`
       );
       const fetchedThing = await response.json();
       setThing(fetchedThing);
