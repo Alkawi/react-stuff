@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Tags from '../Tags/Tags';
-import Button from '../Button/Button';
 
 type CardProps = {
   title: string;
@@ -16,7 +16,7 @@ function DetailCard({
 }: CardProps): JSX.Element {
   return (
     <CardBody>
-      <Button>Back</Button>
+      <Link to="/">Back</Link>
       <h2>{title}</h2>
       <p>{description}</p>
       {categories.map((tag) => (
