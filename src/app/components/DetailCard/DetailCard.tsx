@@ -6,15 +6,19 @@ import Button from '../Button/Button';
 type CardProps = {
   title: string;
   description: string;
-  tagList: string[];
+  categories: string[];
 };
 
-function DetailCard({ title, description, tagList }: CardProps): JSX.Element {
+function DetailCard({
+  title,
+  description,
+  categories,
+}: CardProps): JSX.Element {
   return (
     <CardBody>
       <h2>{title}</h2>
       <p>{description}</p>
-      {tagList.map((tag) => (
+      {categories.map((tag) => (
         <Tags key={tag}>{tag}</Tags>
       ))}
       <Button>Back</Button>
@@ -27,9 +31,7 @@ export default DetailCard;
 const CardBody = styled.div`
   background-color: red;
   color: white;
-  display: grid;
   padding: 15px;
   border-radius: 12px;
-  justify-items: center;
   margin: 20px;
 `;
