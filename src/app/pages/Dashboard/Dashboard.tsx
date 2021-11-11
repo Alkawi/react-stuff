@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Card from '../../components/Card/Card';
 import type { Thing } from '../../types';
 
@@ -19,11 +20,9 @@ function Dashboard(): JSX.Element {
       <h1>Dashboard</h1>
       {things &&
         things.map((thing) => (
-          <Card
-            key={thing.id}
-            title={thing.name}
-            description={thing.description}
-          />
+          <Link key={thing.id} to={`/stuff/${thing.id}`}>
+            <Card title={thing.name} description={thing.description} />
+          </Link>
         ))}
     </div>
   );
