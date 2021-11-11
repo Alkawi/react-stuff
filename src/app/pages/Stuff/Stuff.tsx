@@ -22,9 +22,9 @@ function Stuff(): JSX.Element {
     <div>
       {thing && (
         <DetailCard
-          title={thing?.name}
-          description={thing?.description}
-          categories={thing?.categories}
+          title={thing.name}
+          description={thing.description}
+          categories={thing.categories}
         />
       )}
     </div>
