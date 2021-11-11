@@ -14,7 +14,7 @@ function Card({ title, description, tagList }: CardProps): JSX.Element {
       <h2>{title}</h2>
       <p>{description}</p>
       {tagList?.map((tag) => (
-        <Tags>{tag}</Tags>
+        <Tags key={tag}>{tag}</Tags>
       ))}
     </CardBody>
   );
@@ -28,6 +28,6 @@ const CardBody = styled.div`
   display: grid;
   padding: 15px;
   border-radius: 12px;
-  max-width: 500px;
   justify-items: center;
+  margin: 20px;
 `;
