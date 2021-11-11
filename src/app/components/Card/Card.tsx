@@ -1,21 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tags from '../Tags/Tags';
 
 type CardProps = {
   title: string;
   description: string;
-  tagList?: string[];
 };
 
-function Card({ title, description, tagList }: CardProps): JSX.Element {
+function Card({ title, description }: CardProps): JSX.Element {
   return (
     <CardBody>
       <h2>{title}</h2>
       <p>{description}</p>
-      {tagList?.map((tag) => (
-        <Tags key={tag}>{tag}</Tags>
-      ))}
     </CardBody>
   );
 }
