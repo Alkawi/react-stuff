@@ -6,7 +6,9 @@ import type { Thing } from '../../types';
 
 function Stuff(): JSX.Element {
   const { thingId } = useParams();
-  const thing = useFetch(`https://json-server.neuefische.de/stuff/${thingId}`);
+  const thing = useFetch<Thing>(
+    `https://json-server.neuefische.de/stuff/${thingId}`
+  );
 
   return (
     <div>
