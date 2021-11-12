@@ -1,14 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 
 export default function AddForm(): JSX.Element {
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+
+  const navigate = useNavigate();
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    await fetch('https://json-server.neuefische.de/stuff', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, description }),
+    });
+
+    navigate('/');
+  }
+
   return (
-    <Form action="">
+    <Form onSubmit={handleSubmit}>
       <Label>
-        Name: <input type="text" />
+        Name:{' '}
+        <input
+          type="text"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
       </Label>
       <Label>
-        Description: <input type="text" />
+        Description:{' '}
+        <input
+          type="text"
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
+        />
       </Label>
 
       <Button type="submit" />
