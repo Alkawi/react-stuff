@@ -8,6 +8,7 @@ function App(): JSX.Element {
       navigation
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="/app" element={<h1>Add Form</h1>} />
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="/contact" element={<h1>Contact</h1>} />
 
