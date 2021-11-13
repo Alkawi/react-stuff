@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import DetailCard from '../../components/DetailCard/DetailCard';
 import useFetch from '../../hooks/useFetch';
 import type { Thing } from '../../types';
@@ -10,6 +10,14 @@ function Stuff(): JSX.Element {
     `https://json-server.neuefische.de/stuff/${thingId}`
   );
 
+  const navigate = useNavigate();
+
+  async function handleDelete(id: number) {
+    await fetch(`https://json-server.neuefische.de/stuff/${id}`, {
+      method: 'DELETE',
+    });
+    navigate('/');
+  }
   return (
     <div>
       {thing && (
@@ -17,6 +25,7 @@ function Stuff(): JSX.Element {
           title={thing.name}
           description={thing.description}
           categories={thing.categories}
+          onDelete={() => handleDelete(thing.id)}
         />
       )}
     </div>
